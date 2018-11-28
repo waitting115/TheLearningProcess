@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>boom</title>
+	<style>
+		*{
+			padding : 0;
+			margin: 0;
+			list-style: none;
+		}
+		#div1{
+			width : 640px;;
+			height : 400px;
+			position : absolute;
+			left:50%;
+			margin-left: -320px;
+			top: 50%;
+			margin-top: -200px;
+			border: 1px solid black;
+
+			transform-style: preserve-3d;
+			/*使元素变为3d元素,就可以使用translateZ属性了*/
+		}
+		#div1 div {
+			position : absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+
+	<script>
+	document.body.style.overflow = 'hidden';
+		var z = 999999;
+		var index = 0;
+		var arr = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+
+		boom(8,5);
+
+		function boom(l, t) {
+
+			// var div1 = document.getElementById('div1');
+			var oParentNode = document.createElement('div');
+			oParentNode.style.zIndex = z;
+			z--;
+			div1.appendChild(oParentNode); 
+			var x = l;
+			var y = t;
+			//由于第一个是0,1 第二个是0,2 都是纵向的排列，所以如果想让小div横向排列，将下面的xy调换位置即可
+			for(var i =0; i < y; i++) {
+				for(var j = 0; j < x; j++) {
+					//创建小div
+					var oDiv = document.createElement('div');
+					oDiv.style.width = div1.clientWidth / x + 'px';//这里不能用clientOffsetWidth，因为它包含border
+					oDiv.style.height = div1.clientHeight / y + 'px';
+
+					// 设置每一个小div的定位
+					oDiv.style.left = (div1.clientWidth / x) * j + 'px';//单位不能忘
+					oDiv.style.top = (div1.clientHeight / y) * i + 'px';
+
+
+					//add background
+					oDiv.style.background ='url('+arr[index]+')';
+
+					oDiv.style.backgroundPositionX = (div1.clientWidth / x) * -j + 'px';
+					oDiv.style.backgroundPositionY = (div1.clientHeight / y) * -i + 'px';
+					//加过渡效果
+					oDiv.style.transition = (Math.random() * 1.5 + 0.5) + 's';
+
+					oParentNode.appendChild(oDiv);
+
+				}
+			}
+
+			//开始做效果
+			var allDiv = oParentNode.children;
+			setTimeout(function () {
+
+				index ++;
+				index == arr.length && (index = 0);
+				boom(l,t);
+
+				for(var i = 0; i < allDiv.length; i ++) {
+				allDiv[i].style.transform = 'perspective(800px) translateX('+(Math.random()*300-100)+'px) translateY('+(Math.random()*300-100)+'px) rotateX('+(Math.random()*360-180)+'deg) rotateY('+(Math.random()*360-180)+'deg) translateZ('+(Math.random()*300 - 100)+'px)';
+				allDiv[i].style.opacity = 0;
+				}
+			}, 2000);
+
+			//让它爆炸完就消失
+			setTimeout(function () {
+				for(var i = 0; i < allDiv.length;i++) {
+					oParentNode.remove();
+					// boom(8,5);
+				}
+			}, 3000);
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>
