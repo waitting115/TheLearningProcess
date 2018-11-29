@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.div1{
+			width:200px;
+			height:200px;
+			background-color:yellow;
+			border:2px solid #f40;
+			padding:10px;
+			margin:30px;
+			
+			/*在超出边框边缘范围绘制轮廓*/
+			outline:2px solid #ccc;/*轮廓形状*/
+			outline-offset:15px;/*轮廓位置*/
+		}
+		.div2{
+			width:300px;
+			padding:10px 30px;
+			margin-bottom: 20px;
+			border:2px solid #f00;
+
+			resize:both;/*调整属性，两个配合着使用*/
+			overflow:auto;
+		}
+		.div3 img{
+			border:1px solid #f00;
+			/*border-radius:20px;*//*圆角*/
+			border-radius:50%;/*椭圆*/
+		}
+		.div4 img{
+			border:1px solid #ccc;
+			border-radius:5px;
+			padding:6px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2">调整属性指定一个元素是否可以由用户更改大小</div>
+	<div class="div3">
+		<img src="img/cat.jpg" alt="">
+	</div>
+	<div class="div4">
+		<img src="img/cat.jpg" alt="">
+	</div>
+</body>
+</html>

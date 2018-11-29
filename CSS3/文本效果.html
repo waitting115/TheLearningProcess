@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+
+		div.div_font h1{/*文字阴影效果*/
+			/*text-shadow: 水平阴影，垂直阴影，模糊的距离，阴影的颜色；*/
+			text-shadow: 5px 5px 5px #f40;
+		}
+		.div1{/*盒子阴影效果*/
+			width:300px;
+			height:100px;
+			background-color: yellow;
+			box-shadow:15px 15px 15px #f40;
+			margin-bottom:20px;
+		}
+		/*阴影效果也可以在伪元素上面加*/
+		.all{
+			width:280px;
+			box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);/*有问题*/
+			text-align: center;
+			margin-bottom:20px;
+		}
+		.header{/*设置卡片效果*/
+			background-color:#4caf50;
+			color:#fff;
+			padding:10px;
+			font-size:40px;
+		}
+		.contant{
+			padding:3px 10px 10px 10px;
+			font-size: 20px;
+		}
+		.test{
+			white-space:nowrap;/*强制文字不换行*/
+			width:12em;
+			overflow:hidden;
+			border:1px solid #000;
+			margin-bottom: 20px;
+		}
+		/*换行情况*/
+		.div2{/*保持原有特性，保持单词的形态*/
+			width:7em;
+			border:1px solid #000;
+			word-break:keep-all;
+			margin-bottom: 20px;
+		}
+		.div3{/*使单词换行*/
+			width:7em;
+			border:1px solid #000;
+			word-break:break-all;
+		}
+	</style>
+</head>
+<body>
+	<div class="div_font">
+		<h1>看我看我！我有阴影哦</h1>
+	</div>
+	
+	<div class="div1"></div>
+		<div class="all">
+			<div class="header">
+			<h1>1</h1>
+		</diV>
+		<div class="contant">
+			<p>January 1,2018</p>
+		</div>
+	</div>
+	<div class="test" style="text-overflow: ellipsis;">文字被隐藏，且用点表示隐藏部分（只适用于一行文本的情况）</div>
+	<div class="test" style="text-overflow:clip">文字被隐藏藏藏藏藏藏藏藏藏藏藏藏藏藏藏藏藏藏藏藏</div>
+	<div class="div2">this is a so long word:abcdefghijklmn.</div>
+	<div class="div3">this is a so long word:abcdefghijklmn.</div>
+</body>
+</html>

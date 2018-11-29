@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{/*在一个例子中使用了所有的过渡属性*/
+			width:200px;
+			height:100px;
+			background:red;
+			transition:width 1s ease 2s;
+			/*transition:属性名 运动时间 运动方式 运动前延迟;*/
+			/*transition-timing-function:linear|ease|ease-in|ease-out|ease-in-out|cubic-bezie(,,,);*/
+			/*transition-timing-function:匀速运动|慢-快-慢|慢-快|快-慢|慢-快-慢|自定义值（0,1之间）;*/
+		}
+		div:hover{
+			width:400px;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

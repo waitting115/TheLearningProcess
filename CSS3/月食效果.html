@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>c3</title>
+
+<style>
+* {
+box-sizing: border-box;
+}
+
+body {
+background-color: #478a92;
+overflow: hidden;
+animation: bianse 18s infinite linear;
+}
+
+.diqiu {
+width: 270px;
+height: 270px;
+border-radius: 50%;
+background-color: #edffc0;
+position: absolute;
+left: 40%;
+top: 20%;
+/* box-shadow: 0px 0px 50px #fff; */
+animation: diqiude 18s infinite linear;
+}
+
+.yue {
+width: 270px;
+height: 270px;
+border-radius: 50%;
+background-color: #478a92;
+position: absolute;
+margin-top: 118px;
+transform: translate(10px);
+/* box-shadow: inset 0px 0px 50px #478a92; */
+animation: yundong 18s infinite linear;
+}
+
+ 
+
+@keyframes yundong {
+0% {
+transform: translate(200px);
+background-color: #80d0dd;
+}
+15% {
+background-color: #76c4d0;
+}
+35% {
+background-color: #35737a;
+transform: translate(350px);
+}
+50% {
+background-color: #1d565c;
+transform: translate(450px);
+}
+70% {
+background-color: #1d565c;
+transform: translate(550px);
+}
+85% {
+background-color: #76c4d0;
+transform: translate(680px);
+}
+100% {
+background-color: #80d0dd;
+transform: translate(760px);
+}
+}
+
+@keyframes bianse {
+0% {
+background-color: #80d0dd;
+}
+15% {
+background-color: #76c4d0;
+}
+35% {
+background-color: #35737a;
+}
+50% {
+background-color: #1d565c;
+}
+70% {
+background-color: #1d565c;
+}
+85% {
+background-color: #76c4d0;
+}
+
+100% {
+background-color: #80d0dd;
+}
+}
+
+@keyframes diqiude {
+0% {
+background-color: #edffb9;
+}
+15% {
+background-color: #edffba;
+}
+35% {
+background-color: #edffc3;
+}
+50% {
+background-color: #edffc3;
+box-shadow: 0px 0px 30px #EEE0E5;
+}
+85% {
+background-color: #edffba;
+box-shadow: 0px 0px 10px #EEE0E5;
+}
+
+100% {
+background-color: #edffb9;
+box-shadow: 0px 0px 0px;
+}
+}
+</style>
+
+<body>
+<div class="diqiu">
+
+</div>
+
+<div class="yue"></div>
+
+</body>
+
+</html>
+

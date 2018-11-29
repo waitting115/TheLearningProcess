@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		/*1、线性渐变：*/
+		/*语法：background:linear-gradient(direction,color1,color2,...);*/
+		div{
+			width:300px;
+			height:100px;
+			margin-bottom: 20px;
+		}
+		.div1{/*横向*/
+			background:linear-gradient(to right,red,green,yellow,purple);
+		}
+		.div2{/*纵向*/
+			background:linear-gradient(to bottom,red,green,yellow,purple);
+		}
+		.div3{/*对角*/
+			background:linear-gradient(to bottom right,red,yellow,purple,green);
+		}
+		.div4{/*使用角度改变方向，顺时针方向来计算*/
+			background:linear-gradient(60deg,red,green,purple,yellow);
+		}
+		.div5{/*加上透明度效果，*/
+			background:linear-gradient(to right,rgba(255,0,0,0),rgba(255,0,0,1));
+		}
+		.div6{/*c重复渐变*/
+			background:repeating-linear-gradient(to right,red,purple 10%,yellow 20%);
+		}
+		/*2.径向渐变，由中心定义*/
+		.div7{
+			background:radial-gradient(ellipse,red 12%,white 20%,black 60%);/*ellipse是椭圆，是默认值*/
+		}
+		.div8{
+			background:radial-gradient(circle,red 12%,white 20%,black 60%);/*circle是圆*/
+		}
+		.div9{
+			width:300px;
+			height:300px;
+			background:repeating-radial-gradient(circle,red 10%,yellow 20%);
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+	<div class="div4"></div>
+	<div class="div5"></div>
+	<div class="div6"></div>
+	<div class="div7"></div>
+	<div class="div8"></div>
+	<div class="div9"></div>
+</body>
+</html>

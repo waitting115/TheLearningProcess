@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片模态框</title>
+	<style>
+		#myImg{
+			border-radius:5px;/*圆角*/
+			cursor:pointer;
+			transition:0.3s;
+		}
+		#myImg:hover{
+			opacity:.7;
+		}
+
+		/*The Modal (background)*/
+		.modal{/*black-background*/
+			display:none;
+			position:fixed;
+			z-index:1;
+			padding-top:100px;
+			left:0;
+			top:0;
+			width:100%;
+			height: 100%;
+			overflow:auto;
+			background-color:rgba(0,0,0,.9);
+		}
+		.modal-content{
+			margin:auto;/*img-->center*/
+			display: block;/*a block-->margin:auto; img-->center*/
+			width:80%;/*img-->big*/
+			max-width: 700px;/*limit--width*/
+		}
+		#caption{/*标题*/
+			margin:auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+			text-align: center;
+			color: #ccc;
+			padding:10px 0;
+			height:150px;
+		}
+		.modal-content,#caption{
+			animation:zoom .6s;/*动画*/
+		}
+		@keyframes zoom{
+			from{
+				transform:scale(.1);
+			}
+			to{
+				transform:scale(1);
+			}
+			/*变换：缩放*/
+		}
+		.close{
+			position: absolute;/*absolute-->right,top*/
+			top:15px;
+			right:35px;
+			color:#f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			transition:.3s;/*过渡*/
+		}
+		.close:hover{/*focus-->元素获取焦点时所执行，个人感觉在这里没什么用,所以删掉了*/
+			color:#bbb;
+			text-decoration:none;
+			cursor:pointer;
+		}
+	@media only screen and (max-width:700px){
+		/*media-->媒体查询，screen-->屏幕，这段代码的意思是：屏幕页面宽度如果小于700px了，就让width为100%，（开始是80%）*/
+		.modal-content{
+			width:100%;
+		}
+	}
+	</style>
+</head>
+<body>
+	<h2>图片模态框</h2>
+	<img id="myImg" src="img/aurora.jpg" alt="Northern Lights, Norway">
+
+	<!--The Modal-->
+	<div id="myModal" class="modal">
+		<span class="close">X</span>
+		<img src="" class="modal-content" id="img01">
+		<div id="caption"></div>
+	</div>
+
+	<script>
+		// get modal window
+		var modal=document.getElementById('myModal');
+
+		// get picture modal window,"alt" property as picture pop-up text describe
+		var img=document.getElementById('myImg');
+		var modalImg=document.getElementById('img01');
+		var captionText=document.getElementById('caption');
+
+		img.onclick=function(){
+			modal.style.display='block';
+			modalImg.src=this.src;
+			modalImg.alt=this.alt;
+			captionText.innerHTML=this.alt;
+		}
+		var span = document.getElementsByClassName("close")[0];
+		span.onclick=function(){
+			modal.style.display='none';
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.center{
+			display:inline-block;
+			padding:0;
+			margin:0;
+		}
+		ul.pagination li{
+			display: inline;float:left;
+		}
+		ul.pagination li a {
+			color:black;
+			padding:8px 16px;
+			text-decoration:none;
+			transition: background-color .3s;
+			border:1px solid #ddd;
+			margin:0 4px;
+		}
+		.active{
+			background-color:#4caf50;
+			color:white;
+			border:1px solid #4caf50;
+		}
+		ul.pagination li a:hover:not(.active){
+			/*高操作，排除类名为hover的元素*/
+			background-color: #ddd;
+		}
+		div.center{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="center">
+		<ul class="pagination">
+			<li><a href="#">«</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#" class="active">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">6</a></li>
+			<li><a href="#">7</a></li>
+			<li><a href="#">8</a></li>
+			<li><a href="#">»</a></li>
+		</ul>
+	</div>
+</body>
+<script>
+			var oDiv=document.getElementsByClassName('center')[0];
+			var oLi=oDiv.getElementsByTagName('a');
+
+			for (var i = 0; i < oLi.length; i++) {
+				// (function(i) {
+					oLi[i].onclick = function() {
+						for(var j = 0; j < oLi.length; j++){
+							// oLi[j].className = oLi[j].className.replace(/\s*active\s*/,'');
+							// 此处一定不能写：
+							oLi[j].className='';
+						}
+						this.className='active';
+					};
+				// })(i);
+					
+					// oLi[i].onclick = () => {
+					// 		console.log(i);
+					// };
+
+				 }
+
+	
+	
+</script>
+</html>

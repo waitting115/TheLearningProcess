@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  z-index: 100;
+}
+
+#top{
+  border:#333 solid 3px;
+  height:50px;
+  width:100%;
+  margin-top:-8px;
+  top: auto;
+  background:#333;
+  font-size:16px;
+  
+  }
+td{
+  width:150px;
+  height:50px;
+  text-align: center;
+  color:#FFF;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  }
+td:hover {background-color:dimgray;}
+#3l{
+  margin-top:auto;
+  }
+  
+#f1,#f2,#f3,#f4,#f5,#f6,#f7,#f8,#f9,#f10{
+  position:relative;
+  left:auto;
+  top:auto;
+  display:none;
+  width: 150px;
+  z-index:1;
+  }
+#f2{
+  position: relative;
+  left: 80px;
+  }
+#f3{
+  position: relative;
+  left: 160px;
+  }
+#f4{
+  position: relative;
+  left: 240px;
+  }
+#f5{
+  position: relative;
+  left: 320px;
+  }
+#f6{
+  position: relative;
+  left: 400px;
+  }
+#f7{
+  position: relative;
+  left: 480px;
+  }
+#f8{
+  position: relative;
+  left: 560px;
+  }
+#f9{
+  position: relative;
+  left: 640px;
+  }
+#f10{
+  position: relative;
+  left: 720px;
+  }
+#div2{
+  height: 340px;
+  width: 200px;
+  margin-left: 5%;
+  top: 150px;
+  position: absolute;
+  background-color:#FCC;
+  }
+#tiao1,#tiao2,#tiao3{
+  height:100px;
+  width:150px;
+  margin-top:10px;}
+#tiao1{
+  background-color:#F33;
+  border-radius: 8px;
+  }
+#tiao2{
+  background-color:#F66;
+  border-radius: 8px;
+  }
+#tiao3{
+  background-color:#F99;
+  border-radius: 8px;
+  }
+</style>
+
+  
+<script>
+window.onload = function()
+{
+  var of1 = document.getElementById('f1');
+  var ot1  = document.getElementById('t1');
+  ot1.onmouseover = function()
+  {
+    of1.style.display = "block";
+  }
+  ot1.onmouseout = function()
+  {
+    of1.style.display = 'none';
+  }
+  of1.onmouseover = function()
+  {
+    of1.style.display = "block";
+  }
+  of1.onmouseout = function()
+  {
+    of1.style.display = 'none';
+  }
+  
+  var of2 = document.getElementById('f2');
+  var ot2  = document.getElementById('t2');
+  ot2.onmouseover = function()
+  {
+    of2.style.display = "block";
+  }
+  ot2.onmouseout = function()
+  {
+    of2.style.display = 'none';
+  }
+  of2.onmouseover = function()
+  {
+    of2.style.display = "block";
+  }
+  of2.onmouseout = function()
+  {
+    of2.style.display = 'none';
+  }
+  
+  var of3 = document.getElementById('f3');
+  var ot3  = document.getElementById('t3');
+  ot3.onmouseover = function()
+  {
+    of3.style.display = "block";
+  }
+  ot3.onmouseout = function()
+  {
+    of3.style.display = 'none';
+  }
+  of3.onmouseover = function()
+  {
+    of3.style.display = "block";
+  }
+  of3.onmouseout = function()
+  {
+    of3.style.display = 'none';
+  }
+  
+  var of4 = document.getElementById('f4');
+  var ot4  = document.getElementById('t4');
+  ot4.onmouseover = function()
+  {
+    of4.style.display = "block";
+  }
+  ot4.onmouseout = function()
+  {
+    of4.style.display = 'none';
+  }
+  of4.onmouseover = function()
+  {
+    of4.style.display = "block";
+  }
+  of4.onmouseout = function()
+  {
+    of4.style.display = 'none';
+  }
+  
+  var of5 = document.getElementById('f5');
+  var ot5  = document.getElementById('t5');
+  ot5.onmouseover = function()
+  {
+    of5.style.display = "block";
+  }
+  ot5.onmouseout = function()
+  {
+    of5.style.display = 'none';
+  }
+  of5.onmouseover = function()
+  {
+    of5.style.display = "block";
+  }
+  of5.onmouseout = function()
+  {
+    of5.style.display = 'none';
+  }
+  
+  var of6 = document.getElementById('f6');
+  var ot6  = document.getElementById('t6');
+  ot6.onmouseover = function()
+  {
+    of6.style.display = "block";
+  }
+  ot6.onmouseout = function()
+  {
+    of6.style.display = 'none';
+  }
+  of6.onmouseover = function()
+  {
+    of6.style.display = "block";
+  }
+  of6.onmouseout = function()
+  {
+    of6.style.display = 'none';
+  }
+  
+  var of7 = document.getElementById('f7');
+  var ot7  = document.getElementById('t7');
+  ot7.onmouseover = function()
+  {
+    of7.style.display = "block";
+  }
+  ot7.onmouseout = function()
+  {
+    of7.style.display = 'none';
+  }
+  of7.onmouseover = function()
+  {
+    of7.style.display = "block";
+  }
+  of7.onmouseout = function()
+  {
+    of7.style.display = 'none';
+  }
+  
+  var of8 = document.getElementById('f8');
+  var ot8  = document.getElementById('t8');
+  ot8.onmouseover = function()
+  {
+    of8.style.display = "block";
+  }
+  ot8.onmouseout = function()
+  {
+    of8.style.display = 'none';
+  }
+  of8.onmouseover = function()
+  {
+    of8.style.display = "block";
+  }
+  of8.onmouseout = function()
+  {
+    of8.style.display = 'none';
+  }
+  
+  var of9 = document.getElementById('f9');
+  var ot9  = document.getElementById('t9');
+  ot9.onmouseover = function()
+  {
+    of9.style.display = "block";
+  }
+  ot9.onmouseout = function()
+  {
+    of9.style.display = 'none';
+  }
+  of9.onmouseover = function()
+  {
+    of9.style.display = "block";
+  }
+  of9.onmouseout = function()
+  {
+    of9.style.display = 'none';
+  }
+  
+  var of10 = document.getElementById('f10');
+  var ot10 = document.getElementById('t10');
+  ot10.onmouseover = function()
+  {
+    of10.style.display = "block";
+  }
+  ot10.onmouseout = function()
+  {
+    of10.style.display = 'none';
+  }
+  of10.onmouseover = function()
+  {
+    of10.style.display = "block";
+  }
+  of10.onmouseout = function()
+  {
+    of10.style.display = 'none';
+  }
+
+}
+</script>
+</head>
+
+  
+<body>
+<div id="total">
+<div id="div1"> 
+  <div id="top">
+   <table width="800px" border="0" align="left">
+  <tr>
+  <td id="t1">底妆</td>
+  <td id="t2">定妆</td>
+  <td id="t3">眼妆</td>
+  <td id="t4">唇妆</td>
+  <td id="t5">修容</td>
+  <td id="t6">高光</td>
+  <td id="t7">腮红</td>
+  <td id="t8">化妆工具</td>
+  <td id="t9">卸妆</td>
+  <td id="t10">香氛</td>
+  </tr>
+   </table>
+  <div id="3l" align="right">
+  <img src="3L.jpg" width="70" height="45"/> 
+  </div>
+  </div>
+  <div id="fenlei">
+   <table  id="f1" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60" ><td>粉底液</td></tr>
+    <tr height="60"><td>气垫</td></tr>
+    <tr height="60"><td>粉底膏</td></tr>
+   </table>
+   <table  id="f2" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>散粉</td></tr>
+    <tr height="60"><td>粉饼</td></tr>
+    <tr height="60"><td>定妆喷雾</td></tr>
+   </table>
+   <table  id="f3" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>睫毛膏</td></tr>
+    <tr height="60"><td>眼线</td></tr>
+    <tr height="60"><td>眼影</td></tr>
+    <tr height="60"><td>眉笔</td></tr>
+   </table>
+   <table  id="f4" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>口红</td></tr>
+    <tr height="60"><td>唇釉</td></tr>
+    <tr height="60"><td>变色唇膏</td></tr>
+    <tr height="60"><td>唇线笔</td></tr>
+   </table>
+   <table  id="f5" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>膏体修容棒</td></tr>
+    <tr height="60"><td>修容粉饼</td></tr>
+   </table>
+   <table  id="f6" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>高光棒</td></tr>
+    <tr height="60"><td>高光粉饼</td></tr>
+   </table>
+   <table  id="f7" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>腮红膏</td></tr>
+    <tr height="60"><td>腮红</td></tr>
+    <tr height="60"><td>腮红棒</td></tr>
+   </table>
+   <table  id="f8" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>各类刷具</td></tr>
+    <tr height="60"><td>刷子清洗剂</td></tr>
+    <tr height="60"><td>粉扑</td></tr>
+    <tr height="60"><td>粉扑清洗剂</td></tr>
+   </table>
+   <table  id="f9" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>卸妆油</td></tr>
+    <tr height="60"><td>卸妆水</td></tr>
+    <tr height="60"><td>卸妆膏</td></tr>
+   </table>
+   <table  id="f10" bgcolor="hsla(0,0%,0%,1.00)" width="150">
+    <tr height="60"><td>男士</td></tr>
+    <tr height="60"><td>女士</td></tr>
+   </table>
+  </div>
+</div>
+<div id="div2" align="center">
+  <div id="tiao1"></div>
+    <div id="tiao2"></div>
+    <div id="tiao3"></div>
+</div>
+<div class="lunbo">
+  
+</div>
+  
+</div>
+
+</body>
+</html>

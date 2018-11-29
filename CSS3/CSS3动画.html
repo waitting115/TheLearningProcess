@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin:20px;
+		}
+		.div1{/*用from  to做渐变*/
+			width:200px;
+			height:200px;
+			background: red;
+			animation:myfirst 5s;/*animation--动画,配合着下面的@keyframes使用，两个参数缺一不可*/
+		}
+		@keyframes myfirst{/*@keyframes规则是创建动画，指定一个css样式和动画将逐步从目前的样式改为新的样式。*/
+			form{background:red;}/*from...to...从什么到什么*/
+			to{background:purple;}
+		}
+		.div2{/*用百分比做渐变，0%是动画的开始，100%是动画的完成，之间就是两个属性值的过渡*/
+			width:200px;
+			height:200px;
+			background:yellow;
+			animation:mysecond 7s;
+		}
+		@keyframes mysecond{
+			0%{background:yellow;}
+			25%{background:green;}
+			50%{background:purple;}
+			75%{background: red;}
+			100%{background:yellow;}
+		}
+		.div3{/*用百分比，一次使多个属性值做渐变*/
+			width:200px;
+			height:200px;
+			margin-bottom:400px;
+			position:relative;
+			background:#ccc;
+			animation:mythird 8s;
+		}
+		@keyframes mythird{
+			0%{background:#ccc; left:0; top:0;}
+			25%{background:#f00; left:200px; top:0;}
+			50%{background:#0f0; left:200px; top:200px;}
+			75%{background:#00f; left:0; top:200px;}
+			100%{background:#f4c;left:0; top:0;}
+		}
+
+		.div4{/*animation详细属性*/
+			width:200px;
+			height:200px;
+			position: relative;/*必须要有的定位，要不然无法用left和top*/
+			background:purple;
+
+			animation-name:myfourth;/*动画名称*/
+			animation-duration:5s;/*动画持续时间*/
+			animation-timing-function:linear;/*动画运动速度曲线*/
+			animation-delay: 1s;/*动画开始的延迟时间*/
+			animation-iteration-count: infinite;/*动画重复次数，默认是1，infinite是无限*/
+			animation-direction:alternate;/*动画是否在下一周期逆向播放，默认是normal，alternate是交替*/
+			animation-play-state:running;/*规定动画是否正在运行或暂停，可以通过控制此属性值来控制动画的运行和暂停*/
+		}
+		@keyframes myfourth{
+			0%{background:purple; left:0; top:0; transform:rotate(180deg);}
+			25%{background:#f00; left:200px; top:0; transform:rotate(90deg);}
+			50%{background:#0f0; left:200px; top:200px; transform:rotate(0deg);}
+			75%{background:#00f; left:0; top:200px; transform:rotate(-90deg);}
+			100%{background:purple; left:0; top:0; transform:rotate(-180deg);}
+		}
+		.div5{/*简写的animation属性,不包括animation-play-state属性（控制动画运动或暂停的属性）*/
+			width:200px;
+			height:200px;
+			position: relative;
+			background:purple;
+			animation:myfourth 5s ease-in 1s infinite alternate;
+			/*animation:动画名 动画时间 动画运动速度曲线 动画延迟时间 动画重复次数 是否逆向播放;除了两个时间的顺序，其他的属性值顺序可以自由摆放*/
+		}
+	</style>
+</head>
+<body style="height:2000px">
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+	<div class="div4"></div>
+	<div class="div5"></div>
+	<div class="div6"></div>
+</body>
+</html>
