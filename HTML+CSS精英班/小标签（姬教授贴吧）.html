@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:180px;
+				height:30px;
+				line-height:30px;/*与高度数值相等使之垂直居中*/
+				font-size: 18px;
+				font-weight:700;
+				font-family:"楷体";
+				padding-left:6px;
+				background-color:#ccc;
+				
+			}
+			div::before{
+				content:"";
+				display:inline-block;
+				width:15px;
+				height:20px;
+				margin-right:3px;
+				background-image:url(img/小兔.gif);
+			}
+			div::after{
+				content:">";/*这应该是一个小图放在背景上的*/
+				display:inline-block;
+				width:15px;
+				height:20px;
+				float:right;
+			}
+		</style>
+	</head>
+	<body>
+		<div>姬教授贴吧</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			span::before{/*逻辑的最前面*/
+				content:'我 ';/*伪元素必须有的属性!*/
+				width:100px;
+				height:100px;
+				background:red;
+				display:inline-block;
+			}
+			span::after{/*逻辑的最后面*/
+				content:' 是的，的却是这样。';/*这个属性只能用在伪元素里面*/
+			}
+		</style>
+	</head>
+	<body>
+		<span>很帅</span>
+		
+		<p>伪元素天生就存在在任意一个元素的里面，有两个最特殊的伪元素：before和after。可以与正常元素一起使用，但是没有正常元素一样的结构。可以被css正常操作。</p>
+		<p>可以用来在逻辑的最后清除浮动，取消浮动流</p>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			div{
+				width:320px;
+			}
+			div img{
+				width:100px;
+				height:100px;
+				float: left;
+			}
+			.p1{
+				height:40px;
+				font-size: 20px;
+				line-height:20px;
+				color:#333;
+				overflow: hidden;
+				margin-bottom:8px;
+			}
+			.p2{
+				font-size:12px;
+				color:#666;
+				line-height:1.2em;/*是em*/
+			}
+			div:hover{
+				width:400px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--容器默认宽度320px，图片100*100  hover时容器宽度的变成400px-->
+		<div>
+			<img src="img/猫.jpg"/>
+			<p class="p1">
+				最多两行20px #333，顶部对齐图片，底部间距 8px
+			</p>
+			<p class="p2">
+				（12px #666 行高1.2）使用语义化的HTML标签完成以下布局，考虑模块化化和扩展性。容器默认宽度320px；右侧。
+			</p>
+		</div>
+	</body>
+</html>

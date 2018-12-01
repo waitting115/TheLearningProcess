@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		bfc---block format context
+		
+		块级格式化上下文
+		
+		可以解决margin塌陷问题。（一个bug）（只能说去弥补，不能完全解决）
+		
+		margin塌陷：父子元素（嵌套）垂直方向的margin会结合到一起，并取最大的值。会导致子集垂直方向不相对于父级的顶部定位，可能相对于浏览器顶部定位，并且可以带着父级一起向下运动。
+		
+		如何触发一个盒子的bfc：
+		
+		position:absolute;
+		display:inline-block;
+		float:left/right;
+		overflow:hidden;
+		
+		解决问题的时候选一个不引发新的问题的方法。
+	</body>
+</html>

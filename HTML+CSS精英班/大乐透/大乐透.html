@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+<script>
+function daletou()
+{
+	function random_values(n1,n2)//封装一个随机取值函数
+	{
+		var sum=n2-n1+1;//算差值(加一才能得到可能值的总数)
+		return Math.floor(Math.random()*sum+n1);//借助Math库获得想要的结果(向上取整，获取随机数)
+	}
+	function compare(a1,a2)//封装一个比较函数
+	{
+		return a1-a2;//只需关注返回的是正数，负数或者是0，没必要是1或-1,0
+	}
+
+//	var a=random_values(3,10);//用来测试函数
+//	alert(a);
+	var arr1=new Array(5);
+	var arr2=new Array(2);
+	var arr11=new Array(5);
+	var arr22=new Array(2);
+	var arr_all=new Array(7);
+	
+	var a=random_values(1,33);//第一个数
+	arr1[0]=a;
+
+	var b=random_values(1,33);//第二个数
+	for(var i=0;a==b;i++)
+	{
+		b=random_values(1,33);
+	}
+	arr1[1]=b;
+	
+	var c=random_values(1,33);//第三个数
+	for(var i=0;(a==c)||(b==c);i++)
+	{
+		c=random_values(1,33);
+	}
+	arr1[2]=c;
+	
+	var d=random_values(1,33);//第四个数
+	for(var i=0;(a==d)||(b==d)||(c==d);i++)
+	{
+		d=random_values(1,33);
+	}
+	arr1[3]=d;
+	
+	var e=random_values(1,33);//第五个数
+	for(var i=0;(a==e)||(b==e)||(c==e)||(d==e);i++)
+	{
+		e=random_values(1,33);
+	}
+	arr1[4]=e;
+	
+	var f=random_values(1,12);//第六个数
+	for(var i=0;(a==f)||(b==f)||(c==f)||(d==f)||(e==f);i++)
+	{
+		f=random_values(1,12);
+	}
+	arr2[0]=f;
+	
+	var g=random_values(1,12);//第七个数
+	for(var i=0;(a==g)||(b==g)||(c==g)||(d==g)||(e==g)||(f==g);i++)
+	{
+		g=random_values(1,12);
+	}
+	arr2[1]=g;
+	
+	arr11=arr1.sort(compare);//调用函数及Math库函数
+	arr22=arr2.sort(compare);//调用函数及Math库函数
+
+	arr_all=arr11.concat(arr22);//将两个数组合并
+	alert(arr_all);
+	}
+	
+</script>
+	</head>
+	<body>
+		<input type="button" value="点击弹出你的大乐透" onclick="daletou()">
+	</body>
+</html>
