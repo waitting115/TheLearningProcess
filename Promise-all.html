@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promise.all 一失败即失败，都成功才成功</title>
+</head>
+<body>
+	<script type="text/javascript">
+		Promise.all([new Promise((success,fail) => {
+			setTimeout(success,1300,"1");
+		}),new Promise((success,fail) => {
+			setTimeout(fail,1200,'2');
+		}),new Promise((success,fail) => {
+			setTimeout(success,1000,'3');
+		})]).then((x) => {
+			console.log(x + "全通过");
+		},(y) => {
+			console.log("第" + y + "个失败了，所以整个promise失败"); 
+		});
+	</script>
+</body>
+</html>

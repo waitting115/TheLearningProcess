@@ -8,7 +8,14 @@
 			height: 200px;
 			background: #ccc;
 			position: absolute;
+			display: none;
 		}
+		.outNode div:first-of-type {
+			display: block;
+		}
+		.red {
+			background: red;
+		} 
 	</style>
 </head>
 <body>
@@ -18,6 +25,8 @@
 			'topValue' : ['李万宇','沈睿','王凯'],
 			'bottomInner' : ['瘦了','美了','赚钱了']
 		}
+
+		let index = 0;
 
 		createNode = json => `
 			<div class='outNode'>
@@ -29,15 +38,25 @@
 
 		let allDiv = new Set($('.outNode>div'));
 		let allInput = new Set($('input'));
+		[...allInput][0].style.background = 'yellow';
 
 		[...allInput].forEach((x,index) => {
 			x['onclick'] = () => {
-				allDiv.forEach((y) => y.style.display = 'none');
 				allInput.forEach((z) => z.style.background = 'none');
+				allDiv.forEach((y) => y.style.display = 'none');
 				[...allInput][index].style.background = 'yellow';
 				[...allDiv][index].style.display = 'block';
 			}
 		})
+
+		setInterval(() =>{
+			index ++;
+			(index == [...allInput].length) && (index = 0);
+			allInput.forEach((x) => x.style.background = 'none');
+			[...allInput][index].style.background = 'yellow';
+			allDiv.forEach((x) => x.style.display = 'none');
+			[...allDiv][index].style.display = 'block';
+		}, 500);
 	</script>
 </body>
 </html>

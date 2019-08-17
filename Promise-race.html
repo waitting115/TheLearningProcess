@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Promise.race()函数，测速</title>
+</head>
+<body>
+	<script type="text/javascript">
+		Promise.race([new Promise((success,fail)=>{
+			setTimeout(success,1000,'王');
+		}),new Promise((success,fail)=>{
+			setTimeout(success,1200,'敬');
+		}),new Promise((success,fail)=>{
+			setTimeout(success,800,'伟');
+		})]).then((x)=>{
+			console.log(x);
+		});
+		//谁运行最快，谁第一，其他的都不要
+	</script>
+</body>
+</html>

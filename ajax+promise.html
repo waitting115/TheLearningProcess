@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ajax+promise</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//这里要注意，要把这个文件放到服务器上然后打开才能成功，否则是找不到的
+	ajax('http://localhost/ajax+promise.php');
+
+		function ajax(url) {
+			return new Promise((success,fail) => {
+				var xmlHttp = new XMLHttpRequest();
+				xmlHttp.open('GET',url,true);
+				xmlHttp.send();
+				xmlHttp.onload = function () {
+					success(xmlHttp.responseText);
+				};
+				xmlHttp.onerror = function () {
+					fail('a');
+				}
+			}).then((x)=>{
+				console.log(x);
+			}).catch((y)=>{
+				console.log('失败了' + y);
+			})
+		};
+
+	
+	</script>
+</body>
+</html>
