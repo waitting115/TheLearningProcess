@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js重载</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//举例：如果不传参，则输出所有人，输入firstname就会输出匹配的人，输入全名，也会输出匹配的人，如果用重载的话，用户体验会更好。
+		function method(obj,name,fnc){
+            var old = obj[name];//把前一次添加的方法存在一个临时变量old里面
+            console.log(old instanceof Function);
+            // 重写了object[name]的方法
+            obj[name] = function(){
+            	// 如果调用object[name]方法时，传入的参数个数跟预期的一致，则直接调用
+                console.log(arguments.length+" "+fnc.length);
+                if(arguments.length === fnc.length){
+                    return fnc.apply(this,arguments);
+                // 否则，判断old是否是函数，如果是，就调用old
+                }else if(typeof old === "function"){
+                    return old.apply(this,arguments);
+                }
+            }
+        }
+
+        var people = {
+            values:["Zhang san","Li si"]
+        };
+        method(people,"find",function(){
+            console.log("无参数");
+            return this.values;
+        })
+        method(people,"find",function(firstname){
+            console.log("一个参数");
+            var ret = [];
+            for(var i = 0;i < this.values.length;i++){
+                if(this.values[i].indexOf(firstname) === 0){
+                    ret.push(this.values[i])
+                }
+            }
+            return ret;
+        })
+        method(people,"find",function(firstname,lastname){
+            console.log("两个参数");
+            var ret = [];
+            for(var i = 0;i < this.values.length;i++){
+                if(this.values[i] == firstname + " " + lastname){
+                    ret.push(this.values[i])
+                }
+            }
+            return ret;
+        })
+        console.log(people.find());
+        console.log(people.find("Zhang"));
+        console.log(people.find("Zhang","san"));
+	</script>
+</body>
+</html>
