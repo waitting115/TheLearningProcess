@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>echarts</title>
+	<script src="js/echarts-all-3.js"></script>
+	<style type="text/css">
+		div {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+
+	<script type="text/javascript">
+		//折线图
+		var myChart = echarts.init(document.getElementsByClassName('div1')[0]);
+
+		var option = {
+			title: {
+				text: 'Echarts入门实例'
+			},
+			tooltip: {},
+			legend: {
+				data: ['销量','a']
+			},
+			xAxis: {
+				data: ['衬衫','羊毛衫','雪纺衫','裤子','高跟鞋','袜子']
+			},
+			yAxis: {},
+			series: [{
+				name: '销量',
+				type: 'bar',
+				data: [5,20,36,10,10,20]
+			}]
+		};
+
+		myChart.setOption(option);
+
+		// 南丁格尔图（饼状图）
+		var myChart2 = echarts.init(document.getElementsByClassName('div2')[0]);
+
+		myChart2.setOption({
+			series : [
+		        {
+		            name: '访问来源',
+		            type: 'pie',
+		            radius: '55%',
+		            roseType: 'angle',//添加后就是南丁格尔图
+		            data:[
+		                {value:235, name:'视频广告'},
+		                {value:274, name:'联盟广告'},
+		                {value:310, name:'邮件营销'},
+		                {value:335, name:'直接访问'},
+		                {value:400, name:'搜索引擎'}
+		            ]
+		        }
+		    ]
+		});
+	</script>
+</body>
+</html>
